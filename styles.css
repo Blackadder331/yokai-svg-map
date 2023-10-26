@@ -15,6 +15,8 @@
 
 * {
   font-family: Gotham Medium, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -24,20 +26,43 @@ main {
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  gap: 2rem;
+  background-color: #1d1d1d;
+  position: absolute;
+  z-index: -2;
 }
 h1 {
   font-family: Yokai Bold, sans-serif;
+  color: rgb(255, 11, 72);
+  font-size: 5rem;
+}
+p {
+  color: white;
 }
 #map {
-  width: 600px;
-  height: 200px;
-  border: 1px solid black;
+  width: 540px;
+  height: 900px;
+  border: 1px solid rgb(120, 120, 120);
 }
 
 rect,
 circle,
 polygon {
-  fill: #ccc;
+  fill: rgb(255, 217, 4);
+  stroke: #1d1d1d;
+  stroke-width: 2;
+  padding: 2rem;
+}
+
+rect {
+  fill: rgb(4, 255, 21);
+  stroke: #1d1d1d;
+  stroke-width: 2;
+  padding: 2rem;
+}
+
+polygon {
+  fill: rgb(8, 4, 255);
   stroke: #333;
   stroke-width: 2;
   padding: 2rem;
@@ -45,9 +70,21 @@ polygon {
 
 rect:hover,
 circle:hover,
-polygon:hover {
-  fill: purple;
+polygon:hover,
+rect.selected,
+circle.selected,
+polygon.selected {
+  fill: red;
   stroke: red;
   stroke-width: 3;
   cursor: pointer;
+}
+
+#japan {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  margin-left: 5rem;
 }
