@@ -1,0 +1,53 @@
+@font-face {
+  font-family: Gotham Medium;
+  src: url(./fonts/GothamMedium.otf);
+}
+
+@font-face {
+  font-family: Yokai;
+  src: url(./fonts/OTYokai-Regular.otf);
+}
+
+@font-face {
+  font-family: Yokai Bold;
+  src: url(./fonts/OTYokai-Extrabold.otf);
+}
+
+* {
+  font-family: Gotham Medium, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+h1 {
+  font-family: Yokai Bold, sans-serif;
+}
+#map {
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+rect,
+circle,
+polygon {
+  fill: #ccc;
+  stroke: #333;
+  stroke-width: 2;
+  padding: 2rem;
+}
+
+rect:hover,
+circle:hover,
+polygon:hover {
+  fill: purple;
+  stroke: red;
+  stroke-width: 3;
+  cursor: pointer;
+}
