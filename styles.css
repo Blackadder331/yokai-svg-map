@@ -26,23 +26,25 @@ main {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  gap: 2rem;
   background-color: #1d1d1d;
   position: absolute;
   z-index: -2;
 }
 h1 {
   font-family: Yokai Bold, sans-serif;
-  color: rgb(255, 11, 72);
+  color: #ff0b48;
   font-size: 5rem;
+  text-align: center;
 }
 p {
   color: white;
+  text-align: center;
+  font-size: 1.5rem;
 }
 #map {
   width: 540px;
-  height: 900px;
-  border: 1px solid rgb(120, 120, 120);
+  height: 840px;
+  border: 1px solid rgb(68, 68, 68);
 }
 
 rect,
@@ -62,8 +64,8 @@ rect {
 }
 
 polygon {
-  fill: rgb(8, 4, 255);
-  stroke: #333;
+  fill: rgb(0, 119, 255);
+  stroke: #1d1d1d;
   stroke-width: 2;
   padding: 2rem;
 }
@@ -74,8 +76,8 @@ polygon:hover,
 rect.selected,
 circle.selected,
 polygon.selected {
-  fill: red;
-  stroke: red;
+  fill: #ff0b48;
+  stroke: #ff0b48;
   stroke-width: 3;
   cursor: pointer;
 }
@@ -87,4 +89,94 @@ polygon.selected {
   z-index: -1;
   transform: translate(-50%, -50%);
   margin-left: 5rem;
+  margin-top: 6rem;
+}
+
+#info {
+  max-width: 550px;
+  margin-bottom: 5rem;
+  min-height: 80px;
+}
+
+@keyframes slide-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.h1-animate-out {
+  animation: slide-fade-out 0.5s ease-out forwards;
+}
+
+.h1-animate-in {
+  animation: slide-fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.info-fade-out {
+  animation: fade-out 0.1s ease-out forwards;
+}
+
+.info-fade-in {
+  animation: fade-in 1s ease-in forwards;
+}
+
+#yokai-names {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff0b48; /* Semi-transparent black */
+  border-radius: 12px 12px 0 0; /* Rounded corners at the top */
+  text-align: center;
+  writing-mode: vertical-rl; /* Text will be written from top to bottom */
+  text-orientation: upright; /* Keeps the characters upright */
+
+  padding-bottom: 280px;
+  z-index: 1;
+  display: none;
+
+  transition: padding 1s ease-in-out;
+}
+
+.yokai-name {
+  font-size: 24px;
+  color: white;
+  line-height: 1.5; /* Spacing between the names */
+  /* min-height: 100px; */
+  animation: fade-in 0.5s ease-in forwards;
+  padding: 16px 8px 0 8px;
 }
